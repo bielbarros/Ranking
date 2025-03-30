@@ -37,6 +37,11 @@ public class FuncionarioController {
         return funcionarioService.atualizarFuncionario(id, funcionario);
     }
 
+    @DeleteMapping("/{id}")
+    public String deletarFuncionario(@PathVariable Long id) {
+        funcionarioService.deletarFuncionario(id);
+        return "Funcionário removido com sucesso!";
+    }
 
 
 }

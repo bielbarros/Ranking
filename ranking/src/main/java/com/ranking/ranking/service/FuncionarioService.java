@@ -44,4 +44,12 @@ public class FuncionarioService {
         }
     }
 
+    public void deletarFuncionario(Long id) {
+        if (funcionarioRepository.existsById(id)) {
+            funcionarioRepository.deleteById(id);
+        } else {
+            throw new RuntimeException("Funcionário não encontrado");
+        }
+    }
+
 }

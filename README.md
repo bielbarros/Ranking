@@ -13,7 +13,7 @@ Este projeto é uma API REST desenvolvida em **Spring Boot** para gerenciar um r
 ## Configuração do Projeto
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seu-usuario/ranking-funcionarios.git
+   git clone https://github.com/seu-usuario/ranking.git
    cd ranking-funcionarios
    ```
 2. Configure o banco de dados (padrão: H2, mas pode ser alterado no `application.properties`):

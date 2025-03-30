@@ -32,5 +32,11 @@ public class FuncionarioController {
         return funcionarioService.adicionarPontos(id, pontos, meta);
     }
 
+    @PutMapping("/{id}")
+    public Funcionario atualizarFuncionario(@PathVariable Long id, @RequestBody Funcionario funcionario) {
+        return funcionarioService.atualizarFuncionario(id, funcionario);
+    }
+
+
 
 }

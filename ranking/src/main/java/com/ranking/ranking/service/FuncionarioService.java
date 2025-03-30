@@ -6,6 +6,7 @@ import com.ranking.ranking.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FuncionarioService {
@@ -29,4 +30,18 @@ public class FuncionarioService {
         funcionario.setMeta(meta);
         return funcionarioRepository.save(funcionario);
     }
+
+    public Funcionario atualizarFuncionario(Long id, Funcionario novoFuncionario) {
+        Optional<Funcionario> funcionarioExistente = funcionarioRepository.findById(id);
+        if (funcionarioExistente.isPresent()) {
+            Funcionario funcionario = funcionarioExistente.get();
+            funcionario.setNome(novoFuncionario.getNome());
+            funcionario.setPontos(novoFuncionario.getPontos());
+            funcionario.setMeta(novoFuncionario.getMeta());
+            return funcionarioRepository.save(funcionario);
+        } else {
+            throw new RuntimeException("Funcionário não encontrado");
+        }
+    }
+
 }

@@ -15,6 +15,7 @@ public class Funcionario {
 
     private String nome;
     private int pontos;
+    private String meta;
 
     public Long getId() {
         return id;
@@ -38,5 +39,13 @@ public class Funcionario {
 
     public void setPontos(int pontos) {
         this.pontos = pontos;
+    }
+
+    public String getMeta() {
+        return meta;
+    }
+
+    public void setMeta(String meta) {
+        this.meta = meta;
     }
 }

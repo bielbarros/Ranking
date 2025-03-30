@@ -28,8 +28,8 @@ public class FuncionarioController {
 
     // Adicionar pontos a um funcionário
     @PostMapping("/{id}/adicionar-pontos")
-    public Funcionario adicionarPontos(@PathVariable Long id, @RequestParam int pontos) {
-        return funcionarioService.adicionarPontos(id, pontos);
+    public Funcionario adicionarPontos(@PathVariable Long id, @RequestParam int pontos, @RequestParam String meta) {
+        return funcionarioService.adicionarPontos(id, pontos, meta);
     }
 
 

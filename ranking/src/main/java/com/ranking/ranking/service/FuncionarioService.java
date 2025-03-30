@@ -22,10 +22,11 @@ public class FuncionarioService {
         return funcionarioRepository.findAllByOrderByPontosDesc();
     }
 
-    public Funcionario adicionarPontos(Long id, int pontos) {
+    public Funcionario adicionarPontos(Long id, int pontos, String meta) {
         Funcionario funcionario = funcionarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Funcionário não encontrado!"));
         funcionario.setPontos(funcionario.getPontos() + pontos);
+        funcionario.setMeta(meta);
         return funcionarioRepository.save(funcionario);
     }
 }

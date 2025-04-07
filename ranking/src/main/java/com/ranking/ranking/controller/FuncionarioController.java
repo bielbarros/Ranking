@@ -3,6 +3,7 @@ package com.ranking.ranking.controller;
 import com.ranking.ranking.entity.Funcionario;
 import com.ranking.ranking.service.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -38,10 +39,11 @@ public class FuncionarioController {
     }
 
     @DeleteMapping("/{id}")
-    public String deletarFuncionario(@PathVariable Long id) {
+    public ResponseEntity<Void> deletarFuncionario(@PathVariable Long id) {
         funcionarioService.deletarFuncionario(id);
-        return "Funcionário removido com sucesso!";
+        return ResponseEntity.noContent().build(); // HTTP 204 No Content
     }
+
 
 
 }

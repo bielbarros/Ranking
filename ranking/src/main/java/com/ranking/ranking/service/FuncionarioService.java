@@ -31,6 +31,11 @@ public class FuncionarioService {
         return funcionarioRepository.save(funcionario);
     }
 
+    public Funcionario buscarPorId(Long id) {
+        return funcionarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Funcionário não encontrado com ID: " + id));
+    }
+
     public Funcionario atualizarFuncionario(Long id, Funcionario novoFuncionario) {
         Optional<Funcionario> funcionarioExistente = funcionarioRepository.findById(id);
         if (funcionarioExistente.isPresent()) {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/funcionarios")
@@ -25,6 +26,12 @@ public class FuncionarioController {
     @GetMapping("/ranking")
     public List<Funcionario> listarRanking() {
         return funcionarioService.listarRanking();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Funcionario> buscarFuncionarioPorId(@PathVariable Long id) {
+        Funcionario funcionario = funcionarioService.buscarPorId(id);
+        return ResponseEntity.ok(funcionario);
     }
 
     // Adicionar pontos a um funcionário

@@ -7,5 +7,6 @@ import java.util.List;
 
 @Repository
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
-    List<Funcionario> findAllByOrderByPontosDesc(); // Ordena pelo ranking
+    List<Funcionario> findAllByOrderByPontosDesc();// Ordena pelo ranking
+
 }
